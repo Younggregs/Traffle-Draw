@@ -28,17 +28,6 @@ export default class Traffle extends React.Component {
                     
                         
                </div>
-
-
-               <div className="traffle-box">
-                        <p>Control reached the Draw box</p>
-               </div>
-               <div className="traffle-box">
-                        <p>Control reached the Draw box</p>
-               </div>
-               <div className="traffle-box">
-                        <p>Control reached the Draw box</p>
-               </div>
            </section>
          )
        }

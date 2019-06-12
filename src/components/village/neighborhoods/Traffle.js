@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Alert } from 'react-bootstrap'
+import Spinner from 'react-activity/lib/Spinner';
+import 'react-activity/lib/Spinner/Spinner.css';
 
 export default class Traffle extends React.Component {
 
@@ -8,6 +10,7 @@ export default class Traffle extends React.Component {
     state = {
         tweet_list: [],
         is_retweet: false,
+        isLoading: false,
     }
 
     retweeted(){
@@ -42,6 +45,10 @@ export default class Traffle extends React.Component {
          return (
            <section className="traffle">
 
+               {this.state.isLoading ? (
+                    <Spinner color="#ff0000" size={32}/>
+                ) : (
+                    <section>
                {this.state.tweet_list.map( item => 
                 
                 <div className="traffle-box">
@@ -76,6 +83,10 @@ export default class Traffle extends React.Component {
                </div>
 
                 )}
+                    </section>
+                
+                )}
+            
                
 
              

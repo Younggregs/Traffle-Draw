@@ -28,7 +28,9 @@ export default class Home extends React.Component {
                      
                     </Col>
                     <Col lg={6} md={6} sm={6} xs={6} className="list">
-                      <Glyphicon glyph="option-vertical" style={{ fontSize: 20 }}/>
+                    <Link to='/home'>
+                      <Glyphicon glyph="remove" style={{ fontSize: 20 }}/>
+                    </Link>
                     </Col>
                     </Row>
                     <Row className="tabs">
