@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Chicle');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+body{
+  background-color:whitesmoke;
+  font-family: "Ubuntu";
+  color: 'black';
+}
+
+.list a{
+  color: white;
+}
+
+.navigation{
+  background-color: darkgreen;
+  color: white;
+  height: 80px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+
+.company{
+  padding:10px;
+  background: whitesmoke;
+  height: 100px;;
+  width: 300px;
+  margin: 20px;
+  box-shadow: 3px;
+}
+
+
+.ticket{
+
+  padding:10px;
+  background: whitesmoke;
+  text-align: center;
+  height: 50px;;
+  width: 200px;
+  margin: 20px;
+
+}
+
+
+.tweet{
+
+
+  padding:10px;
+  background: darkblue;
+  text-align: center;
+  color: white;
+  height: 50px;;
+  width: 200px;
+  margin: 20px;
+
+}
+
+
+.list{
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  padding-right: 20px;
+}
+
+
+.login{
+  text-align: center;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 100vh;
+  background-color: darkgreen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.header{
+  text-align: center;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Righteous";
+
+}
+
+.active-tab{
+  border-bottom-color: white;
+  border-bottom-style: solid;
+  border-bottom-width: 10px;
+}
+
+.traffle-box{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+  background-color: white;
+  width:500px;
+  min-height: 200px;
+  margin: 20px;
+}
+
+
+.menu-box{
+
+  align-items: left;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: white;
+  width:500px;
+  margin: 20px;
+  color: black;
+
+}
+
+.traffle{
+
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+}
+
+
+.headerText{
+  font-size: 1.5em;
+  
+
+}
+
+.headerCaption{
+
+}
+
+
+.titleDesign{
+  background-color: orange;
+  padding: 10;
+  margin: 10;
+}
+
+.app-name{
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-left: 20px;
+  font-family: "Righteous";
+}
+
+.tabs{
+
+  text-align: center;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Righteous";
+
+}
+
