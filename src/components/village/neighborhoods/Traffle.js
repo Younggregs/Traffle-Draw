@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Button, Alert } from 'react-bootstrap'
 import Spinner from 'react-activity/lib/Spinner';
 import 'react-activity/lib/Spinner/Spinner.css';
+import Retweet from './blocks/Retweet'
 
 export default class Traffle extends React.Component {
 
@@ -11,10 +12,32 @@ export default class Traffle extends React.Component {
         tweet_list: [],
         is_retweet: false,
         isLoading: false,
+        isLoading2: false,
+        traffle_ticket: 12345,
     }
 
-    retweeted(){
-        this.setState({ is_retweet: true})
+    async retweet(){
+
+    this.setState({ isLoading2: true})
+
+    var formData = new FormData()
+
+    formData.append('traffle_id', 21)
+    formData.append('auth_code', 'eindRdhoa3444')
+
+    try {
+      const res = await fetch('https://demo1587820.mockable.io/retweet', {
+       body : formData,
+       method: 'POST',
+      })
+      const traffle_ticket = await res.json();
+        this.setState({
+          traffle_ticket
+        });
+    } catch (e) {
+      console.log(e);
+    }
+        this.setState({ isLoading2: false, is_retweet: true})
     }
 
 
@@ -58,28 +81,22 @@ export default class Traffle extends React.Component {
                         <p>{item.about_organizer}</p>
                         <p>Draw Duration: {item.duration}</p>
                    </div>
-                    <Alert>
-                        <p><b>Tweet:</b> </p>
+
+                   <div>
+                   <p style={{ textAlign: "center"}}><b>Tweet:</b> </p>
+                    <Alert>  
                         <p>{item.tweet}</p>
                     </Alert>
+                    </div>
+
                     <Alert>
                         <p>Number of winners: {item.winners} </p>
                         <p>Terms and Conditions:</p>
                         <p>{item.terms_conditions}</p>
                     </Alert>
-                  
-                  {this.state.is_retweet ? (
-                       <div className="ticket">
-                            <p>Traffle ticket:</p>
-                        </div>
-                  ) : (
-                    <div className="tweet"  onClick={() => this.retweeted.bind(this)}>
-                    <p>Retweet to contest</p>
-                  </div>
-                   
-                )}
-                    
-                        
+
+                  <Retweet/>
+              
                </div>
 
                 )}

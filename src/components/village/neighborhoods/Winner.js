@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Alert } from 'react-bootstrap'
+import { Button, Alert, Table } from 'react-bootstrap'
 import Spinner from 'react-activity/lib/Spinner';
 import 'react-activity/lib/Spinner/Spinner.css';
 
-export default class Traffle extends React.Component {
+export default class Winner extends React.Component {
 
      state = {
-          draw_list: [],
+          winner_list: [],
           isLoading: false,
       }
  
@@ -16,10 +16,10 @@ export default class Traffle extends React.Component {
           this.setState({ isLoading: true})
       
           try {
-            const res = await fetch('https://demo1587820.mockable.io/draw_list');
-            const draw_list = await res.json();
+            const res = await fetch('https://demo1587820.mockable.io/winner_list');
+            const winner_list = await res.json();
             this.setState({
-              draw_list
+              winner_list
             });
           } catch (e) {
             console.log(e);
@@ -41,31 +41,56 @@ export default class Traffle extends React.Component {
                 ) : (
 
                     <section>
-                         {this.state.draw_list.map(item =>
+                        {this.state.winner_list.map(item =>
 
                          <div className="traffle-box">
 
-                    <div className="company">
+                        <div className="company">
                          <p>{item.title}</p>
                         <p>{item.about_organizer}</p>
                         <p>Draw Duration: {item.duration}</p>
-                    </div>
+                        </div>
                     <div className="tweet">
                          <p>My Traffle Ticket: {item.traffle_ticket}</p>
                     </div>
 
                     <div>
-                        <p style={{ textAlign: "center"}}><b>Tweet:</b> </p>
+                        <p style={{ textAlign: "center"}}><b>Winners list:</b> </p>
                      <Alert>
                         <p>{item.tweet}</p>
                      </Alert>
-                    </div>
+                     </div>
+
 
                      <Alert>
                          <p>Number of winners: {item.winners} </p>
                         <p>Terms and Conditions:</p>
                         <p>{item.terms_conditions}</p>
                      </Alert>
+
+                     <div>
+                        <p style={{ textAlign: "center"}}><b>Winners list:</b> </p>
+                    <Alert>
+                     <Table striped bordered hover>
+                        <thead>
+                        <tr>
+                            <td><b>Rank</b></td>
+                            <td><b>Name</b></td>
+                            <td><b>Traffle Ticket</b></td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {item.winners_list.map( item=>
+                            <tr>
+                                <td>{item.rank}</td>
+                                <td>{item.displayName}</td>
+                                <td>{item.ticket_no}</td>
+                            </tr>
+                        )}
+                        </tbody>
+                    </Table>
+                    </Alert>
+                    </div>
                           
                 </div>
                          

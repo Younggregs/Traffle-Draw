@@ -30,7 +30,6 @@ body{
 .company{
   padding:10px;
   background: whitesmoke;
-  height: 100px;;
   width: 300px;
   margin: 20px;
   box-shadow: 3px;
@@ -40,9 +39,10 @@ body{
 .ticket{
 
   padding:10px;
-  background: whitesmoke;
+  background: darkblue;
   text-align: center;
-  height: 50px;;
+  color: white;
+  font-weight: bold;
   width: 200px;
   margin: 20px;
 
@@ -56,7 +56,7 @@ body{
   background: darkblue;
   text-align: center;
   color: white;
-  height: 50px;;
+  font-weight: bold;
   width: 200px;
   margin: 20px;
 
