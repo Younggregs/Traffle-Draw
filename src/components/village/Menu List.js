@@ -44,7 +44,8 @@ export default class Home extends React.Component {
                   </div>
 
                   <Row className="traffle">
-                      <div className="menu-box">
+                    <Col lg = {6} lgOffset={2} md = {6} mdOffset={1} sm={12} xs={12}>
+                      <div className="traffle-box">
                           <Link to='/new_traffle'>
                               <Alert>
                                 <p>Create New Draw</p>
@@ -71,6 +72,7 @@ export default class Home extends React.Component {
                               </Alert>
                           </Link>
                       </div>
+                      </Col>
                    
                   </Row>
                 </section>

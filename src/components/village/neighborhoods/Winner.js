@@ -42,7 +42,7 @@ export default class Winner extends React.Component {
 
                     <section>
                         {this.state.winner_list.map(item =>
-
+        
                          <div className="traffle-box">
 
                         <div className="company">

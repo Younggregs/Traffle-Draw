@@ -4,6 +4,7 @@ import {  Col, Row, Glyphicon } from 'react-bootstrap'
 import Traffle from './neighborhoods/Traffle'
 import Draw from './neighborhoods/Draw'
 import Winner from './neighborhoods/Winner'
+import { StickyContainer, Sticky } from 'react-sticky';
 
 
 export default class Home extends React.Component {
@@ -48,8 +49,11 @@ export default class Home extends React.Component {
       render() {
             return (
                  
-                <section>
-                  <div className="navigation">
+                <StickyContainer>
+                   <Sticky>{({ style }) =>
+                   <header style={style}>
+
+                      <div className="navigation">
                     <Row>
                     <Col lg={6} md={6} sm={6} xs={6}>
                       <p className="app-name">Traffle Draw</p>
@@ -79,6 +83,10 @@ export default class Home extends React.Component {
                       </Col>
                     </Row>
                   </div>
+                   
+                  </header>
+                     
+                   }</Sticky>
 
                   <Row>
                     {this.state.traffle_code && (
@@ -93,7 +101,7 @@ export default class Home extends React.Component {
                       <Winner/>
                     )}
                   </Row>
-                </section>
+                  </StickyContainer>
                
                 )
               }
