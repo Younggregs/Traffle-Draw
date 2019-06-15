@@ -68,17 +68,32 @@ export default class Home extends React.Component {
                       
                       <Col lg={4} md={4} sm={4} xs={4}>
                         <p onClick={() => this.switch_method(1)}>
-                          Traffles
+                          {this.state.traffle_code ? (
+                              <div className="active-tab">Traffles</div>
+                          ) : (
+                            <p>Traffles</p>
+                          )}
+                          
                         </p>
                       </Col>
                       <Col lg={4} md={4} sm={4} xs={4}>
                       <p onClick={() => this.switch_method(2)}>
-                          Draws
+                        {this.state.draw_code ? (
+                              <div className="active-tab">Draws</div>
+                          ) : (
+                            <p>Draws</p>
+                          )}
+                          
                         </p>
                       </Col>
                       <Col lg={4} md={4} sm={4} xs={4}>
                       <p onClick={() => this.switch_method(3)}>
-                          Winners
+                        {this.state.winner_code ? (
+                              <div className="active-tab">Winners</div>
+                          ) : (
+                              <p>Winners</p>
+                          )}
+                          
                         </p>
                       </Col>
                     </Row>

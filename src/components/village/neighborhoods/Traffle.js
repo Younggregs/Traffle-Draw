@@ -4,6 +4,7 @@ import { Button, Alert, Row, Col } from 'react-bootstrap'
 import Spinner from 'react-activity/lib/Spinner';
 import 'react-activity/lib/Spinner/Spinner.css';
 import Retweet from './blocks/Retweet'
+import Countdown from './blocks/Countdown'
 
 export default class Traffle extends React.Component {
 
@@ -69,7 +70,7 @@ export default class Traffle extends React.Component {
            <section className="traffle">
 
                {this.state.isLoading ? (
-                    <Spinner color="#ff0000" size={32}/>
+                    <Spinner color="#00ff00" size={22}/>
                 ) : (
                     <section>
                {this.state.tweet_list.map( item => 
@@ -77,10 +78,20 @@ export default class Traffle extends React.Component {
                 <div className="traffle-box">
 
                    <div className="company">
-                        <p>{item.title}</p>
-                        <p>{item.about_organizer}</p>
-                        <p>Draw Duration: {item.duration}</p>
+                        <p>Title: {item.title}</p>
+                        <p>Company: {item.about_organizer}</p>
+                        
                    </div>
+
+                  <div>
+                  <p>Draw Duration:</p>
+                   <Alert>
+                        <p>Start Date: </p>
+                        <Countdown/>
+                   </Alert>
+                  </div>
+                   
+                   
 
                    <div>
                    <p style={{ textAlign: "center"}}><b>Tweet:</b> </p>
