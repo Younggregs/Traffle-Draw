@@ -32,11 +32,13 @@ export default class NewTraffle extends React.Component {
 
 
          return (
-           <section className="login">
+           <section className="traffle">
 
-             <div className="titleDesign" style={{ fontSize: 25, margin: 20}}>
+             <div className="titleDesign" style={{ fontSize: 25, margin: 20, color: 'white'}}>
                <p>Create New Transparent Raffle</p>
              </div>
+
+             <div className="traffle-box">
 
                {this.state.next_form ? (
                    <NewTraffle2/>
@@ -48,7 +50,7 @@ export default class NewTraffle extends React.Component {
                   <FieldGroup
                     id="title"
                     type="text"
-                    label="Title of Draw"
+                    label="Title of Draw *"
                     name="title"
                     placeholder="e.g Iwansell search for a hero!"
                   />
@@ -58,7 +60,7 @@ export default class NewTraffle extends React.Component {
                     <FieldGroup
                       id="winners"
                       type="number"
-                      label="Set number of winners"
+                      label="Set number of winners *"
                       name="winners"
                       cols="5"
                       placeholder="winners"
@@ -70,7 +72,7 @@ export default class NewTraffle extends React.Component {
               <Row>
               <Col lg={6} md={6} sm={12} xs={12}>
                   <FormGroup controlId="formControlsTextarea">
-                    <ControlLabel>Prizes
+                    <ControlLabel>Prizes *
                     {this.state.description_err ? (
                     <span className="err-msg">
                      * description required 
@@ -79,13 +81,19 @@ export default class NewTraffle extends React.Component {
                     <div/>
                   )}
                     </ControlLabel>
-                    <FormControl componentClass="textarea" placeholder="Prizes to be won" id="description" name="description"/>
+                    <FormControl
+                      componentClass="textarea"
+                      placeholder="Prizes to be won *"
+                       id="description"
+                        name="description"
+                        rows={3}
+                        />
                   </FormGroup>
                </Col>
               
                <Col lg={6} md={6} sm={12} xs={12}>
                   <FormGroup controlId="formControlsTextarea">
-                    <ControlLabel>Terms and Condition
+                    <ControlLabel>Terms and Condition *
                     {this.state.description_err ? (
                     <span className="err-msg">
                      * description required 
@@ -94,7 +102,12 @@ export default class NewTraffle extends React.Component {
                     <div/>
                   )}
                     </ControlLabel>
-                    <FormControl componentClass="textarea" placeholder="Terms and  conditions goes here" id="description" name="description"/>
+                    <FormControl
+                        componentClass="textarea"
+                        placeholder="Terms and  conditions goes here "
+                        id="description" 
+                        name="description"
+                        rows={3}/>
                   </FormGroup>
                </Col>
               
@@ -103,7 +116,7 @@ export default class NewTraffle extends React.Component {
                 <Row>
                 <Col lg={6} md={6} sm={12} xs={12}>
                   <FormGroup controlId="formControlsTextarea">
-                    <ControlLabel>About Organizer(s)
+                    <ControlLabel>About Organizer(s) *
                     {this.state.description_err ? (
                     <span className="err-msg">
                      * description required 
@@ -112,18 +125,24 @@ export default class NewTraffle extends React.Component {
                     <div/>
                   )}
                     </ControlLabel>
-                    <FormControl componentClass="textarea" placeholder="About draw organizer(s)" id="description" name="description"/>
+                    <FormControl 
+                    componentClass="textarea" 
+                    placeholder="About draw organizer(s)" 
+                    id="description" 
+                    name="description"
+                    rows={3}/>
                   </FormGroup>
                </Col>
               
                   <Col lg={6} md={6} sm={3} smOffset={4} xs={3} xsOffset={4}>
-                      <br /><Button bsStyle="primary" onClick={() => this.next_form()}>Continue</Button>
+                      <br /><Button bsStyle="success" onClick={() => this.next_form()}>Continue</Button>
                   </Col>
               
                 </Row>
                 </form>
 
                )}
+               </div>
              
            </section>
          )

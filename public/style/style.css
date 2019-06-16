@@ -35,10 +35,33 @@ body{
   box-shadow: 3px;
 }
 
+.loading-view{
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.loading{
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  background-color: white;
+}
+
 
 .ticket{
   padding:10px;
-  background: darkblue;
+  background: darkgreen;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #666;
   text-align: center;
   color: white;
   font-weight: bold;
@@ -50,6 +73,7 @@ body{
 .tweet{
   padding:10px;
   background: darkgreen;
+  border-radius: 5px;
   text-align: center;
   color: white;
   font-weight: bold;

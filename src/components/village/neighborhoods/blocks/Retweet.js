@@ -37,15 +37,12 @@ export default class Retweet extends React.Component {
         }
 
 
-      //https://twitter.com/brfootball/status/1139920858040938496
+        //https://twitter.com/SimShagaya/status/1140147987408195585
 
     try {
-      const res = await fetch('https://api.twitter.com/1.1/statuses/retweet/1139920858040938496.json/', {
+      const res = await fetch('https://api.twitter.com/1.1/statuses/retweet/1140147987408195585.json/', {
        method: 'POST',
        headers:{
-        'Access-Control-Allow-Origin': true,
-        'credentials': 'same-origin',
-        'mode': 'no-cors',
         'authorization': 'OAuth oauth_consumer_key="v5YdSajZcBWmmmiJeL0Gd9OoB", oauth_nonce="AUTO_GENERATED_NONCE", oauth_signature="AUTO_GENERATED_SIGNATURE", oauth_signature_method="HMAC-SHA1", oauth_timestamp="AUTO_GENERATED_TIMESTAMP", oauth_token="743877620706779136-nCo3eMZAllncWRu2X07zFAByofgyxKH", oauth_version="1.0"' ,
         'content-type': 'application/json'
        }

@@ -70,7 +70,12 @@ export default class Traffle extends React.Component {
            <section className="traffle">
 
                {this.state.isLoading ? (
-                    <Spinner color="#00ff00" size={22}/>
+                 <div className="loading-view">
+                    <div className="loading">
+                        <Spinner color="#00ff00" size={22}/>
+                    </div>
+                 </div>
+                   
                 ) : (
                     <section>
                {this.state.tweet_list.map( item => 

@@ -37,7 +37,11 @@ export default class Winner extends React.Component {
          return (
            <section className="traffle">
                  {this.state.isLoading ? (
-                    <Spinner color="#00ff00" size={22}/>
+                    <div className="loading-view">
+                     <div className="loading">
+                         <Spinner color="#00ff00" size={22}/>
+                     </div>
+                  </div>
                 ) : (
 
                     <section>

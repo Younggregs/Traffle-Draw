@@ -24,14 +24,14 @@ export default class NewTraffle2 extends React.Component {
 
 
          return (
-           <section >
+           <section>
               <form>
   <Row>
    <Col lg={6} md={6} sm={12} xs={12}>
     <FieldGroup
       id="duration"
       type="date"
-      label="Duration of Draw"
+      label="Duration of Draw *"
       name="duration"
       placeholder="Duration of draw"
     />
@@ -41,7 +41,7 @@ export default class NewTraffle2 extends React.Component {
       <FieldGroup
         id="tweet"
         type="text"
-        label="Copy and paste link of tweet here"
+        label="Copy and paste link of tweet here *"
         name="tweet"
         placeholder="Tweet link"
       />
@@ -51,11 +51,11 @@ export default class NewTraffle2 extends React.Component {
 
 <Row>
     <Col lg={6} md={6} sm={12} xs={12}>
-      <p>Draw fee $5 per week</p>
+      <p>Draw fee $5 per day</p>
     </Col>
 
     <Col lg={6} md={6} sm={3} smOffset={4} xs={3} xsOffset={4}>
-        <br /><Button bsStyle="primary">Pay Draw fee and Finish</Button>
+        <br /><Button bsStyle="success">Pay Draw fee and Finish</Button>
     </Col>
 
   </Row>

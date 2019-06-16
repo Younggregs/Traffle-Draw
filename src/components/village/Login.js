@@ -13,8 +13,6 @@ class Login extends React.Component {
 
   state = {
     auth: false,
-    success: false,
-    failed: false
   }
 
   show(user){
