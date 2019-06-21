@@ -17,9 +17,12 @@ body{
   color: white;
 }
 
+
 .navigation{
-  background-color: darkgreen;
+  background-color: darkred;
+  background-image: linear-gradient(to right,#0f0c29, #302b63, #24243e);
   color: white;
+  margin-bottom: 20px;
   height: 80px;
   position: -webkit-sticky;
   position: sticky;
@@ -33,6 +36,8 @@ body{
   width: 300px;
   margin: 20px;
   box-shadow: 3px;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 .loading-view{
@@ -59,7 +64,7 @@ body{
 
 .ticket{
   padding:10px;
-  background: darkgreen;
+  background-image: linear-gradient(to right,#0f0c29, #302b63, #24243e);
   border-radius: 5px;
   box-shadow: 0 0 5px #666;
   text-align: center;
@@ -72,7 +77,7 @@ body{
 
 .tweet{
   padding:10px;
-  background: darkgreen;
+  background-image: linear-gradient(to right,#0f0c29, #302b63, #24243e);
   border-radius: 5px;
   text-align: center;
   color: white;
@@ -98,7 +103,8 @@ body{
   justify-content: center;
   color: white;
   height: 100vh;
-  background-color: darkgreen;
+  background-color: darkred;
+  background-image: linear-gradient(to right,#0f0c29, #302b63, #24243e);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -131,14 +137,14 @@ body{
 }
 
 .traffle-box{
-  margin-top: 20px;
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
   background-color: white;
-  box-shadow: 0 0 3px #666;
-  border-radius: 10px;
+  border-color:#E1E8ED;
+  border-style: solid;
+  border-width: 1px;
   padding:10px;
 }
 

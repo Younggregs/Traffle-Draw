@@ -39,7 +39,7 @@ export default class Winner extends React.Component {
                  {this.state.isLoading ? (
                     <div className="loading-view">
                      <div className="loading">
-                         <Spinner color="#00ff00" size={22}/>
+                         <Spinner color="#0f0c29" size={22}/>
                      </div>
                   </div>
                 ) : (

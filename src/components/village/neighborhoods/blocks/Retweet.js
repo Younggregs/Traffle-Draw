@@ -68,7 +68,7 @@ export default class Retweet extends React.Component {
                   {this.state.isLoading ? (
                     <div>
                       
-                      <p>Sending retweet... <Spinner color="#00ff00" size={20}/></p>
+                      <p>Sending retweet... <Spinner color="#0f0c29" size={20}/></p>
                     </div>
                     
                   ) : (

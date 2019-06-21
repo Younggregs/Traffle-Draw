@@ -5,10 +5,14 @@ export default class Countdown extends Component {
     state = {
         timerOn: false,
         timerStart: 0,
-        timerTime: 1000000
+        timerTime: this.props.duration,
+        status: true
       };
 
       componentDidMount(){
+          this.setState({ timerTime: this.props.duration})
+          this.forceUpdate()
+
           this.startTimer()
       }
 
@@ -27,7 +31,8 @@ export default class Countdown extends Component {
           } else {
             clearInterval(this.timer);
             this.setState({ timerOn: false });
-            alert("Countdown ended");
+            //alert("Countdown ended, draw finished");
+            this.setState({ status: false })
           }
         }, 10);
       };
@@ -44,9 +49,13 @@ export default class Countdown extends Component {
     return (
       <div className="Countdown">
       <div className="Countdown-header">Countdown</div>
+      {this.state.status ? (
         <div className="Countdown-time">
-            {hours} : {minutes} : {seconds}
+          {hours} : {minutes} : {seconds}
         </div>
+      ) : (
+          <div> <p>Duration over, Draw ended!</p></div>
+      )}
       </div>
     );
   }

@@ -27,7 +27,7 @@ export default class NewTraffle2 extends React.Component {
            <section>
               <form>
   <Row>
-   <Col lg={6} md={6} sm={12} xs={12}>
+   <Col lg={12} md={12} sm={12} xs={12}>
     <FieldGroup
       id="duration"
       type="date"
@@ -37,7 +37,7 @@ export default class NewTraffle2 extends React.Component {
     />
     </Col>
 
-    <Col lg={6} md={6} sm={12} xs={12}>
+    <Col lg={12} md={12} sm={12} xs={12}>
       <FieldGroup
         id="tweet"
         type="text"

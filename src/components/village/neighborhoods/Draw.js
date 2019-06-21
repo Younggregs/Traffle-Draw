@@ -11,6 +11,12 @@ export default class Traffle extends React.Component {
           draw_list: [],
           isLoading: false,
       }
+
+
+      duration(){ 
+        var t = Math.floor(Math.random() * 1000000000);
+        this.setState({ startTime: t }) 
+      }
  
       async componentDidMount() {
   
@@ -40,7 +46,7 @@ export default class Traffle extends React.Component {
                  {this.state.isLoading ? (
                     <div className="loading-view">
                      <div className="loading">
-                         <Spinner color="#00ff00" size={22}/>
+                         <Spinner color="#0f0c29" size={22}/>
                      </div>
                   </div>
                 ) : (
@@ -59,8 +65,7 @@ export default class Traffle extends React.Component {
                     <div>
                     <p>Draw Duration:</p>
                     <Alert>
-                        <p>Start Date: </p>
-                        <Countdown/>
+                        <Countdown duration={this.state.startTime}/>
                     </Alert>
                     </div>
 

@@ -17,6 +17,9 @@ export default class Traffle extends React.Component {
         traffle_ticket: 12345,
     }
 
+
+    duration(){ return Math.floor(Math.random() * 1000000000); }
+
     async retweet(){
 
     this.setState({ isLoading2: true})
@@ -72,7 +75,7 @@ export default class Traffle extends React.Component {
                {this.state.isLoading ? (
                  <div className="loading-view">
                     <div className="loading">
-                        <Spinner color="#00ff00" size={22}/>
+                        <Spinner color="#0f0c29" size={22}/>
                     </div>
                  </div>
                    
@@ -84,15 +87,13 @@ export default class Traffle extends React.Component {
 
                    <div className="company">
                         <p>Title: {item.title}</p>
-                        <p>Company: {item.about_organizer}</p>
-                        
+                        <p>Company: {item.about_organizer}</p>     
                    </div>
 
                   <div>
                   <p>Draw Duration:</p>
                    <Alert>
-                        <p>Start Date: </p>
-                        <Countdown/>
+                        <Countdown duration={this.duration()}/>
                    </Alert>
                   </div>
                    
