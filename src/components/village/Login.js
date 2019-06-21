@@ -24,41 +24,48 @@ class Login extends React.Component {
   }
 
 
-  logged_on(){
-    alert('control reached here')
+  logged_on(token, secret, user){
+    this.setState({ token, secret, user})
   }
 
 
   componentDidMount(){
 
-          this.setState({ isLoading: true })
+            this.setState({ isLoading: true })
+
             var success = false
-            var user = []
+            var token = null
+            var secret = null
+            var user = null
+
+            const that = this
+
             try {
                  firebase.auth().getRedirectResult().then(function(result) {
                    
                     if (result.credential) {
                       // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
                       // You can use these server side with your app's credentials to access the Twitter API.
-                      var token = result.credential.accessToken;
-                      var secret = result.credential.secret;
+                      token = result.credential.accessToken;
+                      secret = result.credential.secret;
                       success = true;
                      
                     }
                     // The signed-in user info.
                     user = result.user;
-                    //.setState({user: user})
+
+                    that.logged_on(token, secret, user)
+                    
     
                     console.log(token)
                     console.log(secret)
                     console.log(user)
-                    console.log("control reached here " + success)
                   }).catch(function(error) {
                     console.log(error.code)
                     console.log(error.message)
                     console.log(error.credential)
                     // ...
-              });
+              })
 
               
 
@@ -142,7 +149,7 @@ class Login extends React.Component {
                   <header className="App-header">
          
                   {
-                    this.state.logged_in
+                    this.state.user
                       ? <div>
                           <p><img src= {this.state.user.photoURL} alt="thumbnail"/></p>
                           <p>Hello, {this.state.user.displayName}</p>
@@ -151,7 +158,7 @@ class Login extends React.Component {
                   }
         
                   {
-                    this.state.logged_in
+                    this.state.user
                       ? <Link to='/home'>
                             <Button>
                             <img src= { require ('./neighborhoods/blocks/houses/images/t-logo.png') } height="30" width="30" alt="twitter-logo"/>Continue as {this.state.user.displayName}

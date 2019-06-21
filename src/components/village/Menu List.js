@@ -29,7 +29,7 @@ export default class Home extends React.Component {
                     </Col>
                     <Col lg={6} md={6} sm={6} xs={6} className="list">
                     <Link to='/home'>
-                      <Glyphicon glyph="remove" style={{ fontSize: 20 }}/>
+                      <Glyphicon glyph="remove" style={{ fontSize: 20, color: 'black' }}/>
                     </Link>
                     </Col>
                     </Row>
