@@ -56,11 +56,11 @@ export default class Home extends React.Component {
                       <div className="navigation">
                     <Row>
                     <Col lg={6} md={6} sm={6} xs={6}>
-                      <p className="app-name">Traffle Draw</p>
+                    <p className="app-name"><img src= { require ('./neighborhoods/blocks/houses/images/icon.png') } height="30" width="30" alt="logo"/>Traffle Draw</p>
                     </Col>
                     <Col lg={6} md={6} sm={6} xs={6} className="list">
                       <Link to='/menu_list'>
-                          <Glyphicon glyph="option-vertical" style={{ fontSize: 20 }}/>
+                          <p><img src= {'https://pbs.twimg.com/profile_images/865699756793896960/U_RlDKQ9_normal.jpg'} height="30" width="30" alt="logo"/><Glyphicon glyph="option-vertical" style={{ fontSize: 20, color: 'black' }}/></p>
                       </Link>
                     </Col>
                     </Row>

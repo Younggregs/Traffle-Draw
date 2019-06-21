@@ -19,12 +19,12 @@ body{
 
 
 .navigation{
-  background-color: darkred;
-  background-image: linear-gradient(to right,#0f0c29, #302b63, #24243e);
-  color: white;
+  background-color:  white;
+  color: black;
   margin-bottom: 20px;
   height: 80px;
   position: -webkit-sticky;
+  box-shadow: 0 0 2px #666;
   position: sticky;
   top: 0;
 }
@@ -104,7 +104,7 @@ body{
   color: white;
   height: 100vh;
   background-color: darkred;
-  background-image: linear-gradient(to right,#0f0c29, #302b63, #24243e);
+  background-image: linear-gradient(to right, #093028, #237a57);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,7 +130,8 @@ body{
 }
 
 .active-tab{
-  border-color: white;
+  border-color: black;
+  color: black;
   border-style: solid;
   border-width: 2px;
   border-radius: 5px;
@@ -177,7 +178,7 @@ body{
 }
 
 .app-name{
-  color: white;
+  color: black;
   font-size: 1.5em;
   font-weight: bold;
   padding-left: 20px;
@@ -190,7 +191,7 @@ body{
   vertical-align: middle;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: grey;
   font-family: "Righteous";
 
 }
