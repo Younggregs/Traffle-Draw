@@ -73,7 +73,7 @@ export default class NewTraffle2 extends React.Component {
       formData.append('auth_code', auth_code)
 
       try {
-        const res = await fetch('http://127.0.0.1:8000/api/get_tweet/' + tweet_id + '/', {
+        const res = await fetch('https://iwansell.com/api/get_tweet/' + tweet_id + '/', {
          body : formData,
          method: 'POST',
         })
@@ -126,7 +126,7 @@ export default class NewTraffle2 extends React.Component {
     
 
       try {
-        const res = await fetch('http://127.0.0.1:8000/api/new_traffle/', {
+        const res = await fetch('https://iwansell.com/api/new_traffle/', {
          body : formData,
          method: 'POST',
         })

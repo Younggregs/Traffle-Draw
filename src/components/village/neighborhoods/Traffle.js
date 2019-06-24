@@ -30,7 +30,7 @@ export default class Traffle extends React.Component {
         formData.append('auth_code', auth_code)
     
         try {
-          const res = await fetch('http://127.0.0.1:8000/api/traffle_list/', {
+          const res = await fetch('https://iwansell.com/api/traffle_list/', {
             body : formData,
             method: 'POST',
           });

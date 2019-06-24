@@ -1,2 +1,2 @@
 export const URL = process.env.API_URL;
-export const LOGIN = "http://127.0.0.1:8000/api/new_traffle_account/";
+export const LOGIN = "https://iwansell.com/api/new_traffle_account/";

@@ -23,7 +23,7 @@ export default class Retweet extends React.Component {
         formData.append('auth_code', auth_code)
     
         try {
-          const res = await fetch('http://127.0.0.1:8000/api/retweet/' + this.props.id + '/' + this.props.tweet_id + '/', {
+          const res = await fetch('https://iwansell.com/api/retweet/' + this.props.id + '/' + this.props.tweet_id + '/', {
            body : formData,
            method: 'POST',
           })
