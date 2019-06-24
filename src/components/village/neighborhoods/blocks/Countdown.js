@@ -48,10 +48,9 @@ export default class Countdown extends Component {
 
     return (
       <div className="Countdown">
-      <div className="Countdown-header">Countdown</div>
       {this.state.status ? (
         <div className="Countdown-time">
-          {hours} : {minutes} : {seconds}
+          Countdown: {hours} : {minutes} : {seconds}
         </div>
       ) : (
           <div> <p>Duration over, Draw ended!</p></div>

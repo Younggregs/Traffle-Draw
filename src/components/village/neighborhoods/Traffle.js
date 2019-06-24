@@ -18,39 +18,22 @@ export default class Traffle extends React.Component {
     }
 
 
-    duration(){ return Math.floor(Math.random() * 1000000000); }
-
-    async retweet(){
-
-    this.setState({ isLoading2: true})
-
-    var formData = new FormData()
-
-    formData.append('traffle_id', 21)
-    formData.append('auth_code', 'eindRdhoa3444')
-
-    try {
-      const res = await fetch('https://demo1587820.mockable.io/retweet', {
-       body : formData,
-       method: 'POST',
-      })
-      const traffle_ticket = await res.json();
-        this.setState({
-          traffle_ticket
-        });
-    } catch (e) {
-      console.log(e);
-    }
-        this.setState({ isLoading2: false, is_retweet: true})
-    }
+    duration(date_object){ return Math.floor(new Date(date_object).getTime()) }
 
 
     async componentDidMount() {
 
         this.setState({ isLoading: true})
+        const auth_code = localStorage.getItem('auth_code')
+
+        var formData = new FormData()
+        formData.append('auth_code', auth_code)
     
         try {
-          const res = await fetch('https://demo1587820.mockable.io/tweets');
+          const res = await fetch('http://127.0.0.1:8000/api/traffle_list/', {
+            body : formData,
+            method: 'POST',
+          });
           const tweet_list = await res.json();
           this.setState({
             tweet_list
@@ -71,7 +54,7 @@ export default class Traffle extends React.Component {
        render() {
          return (
            <section className="traffle">
-
+              
                {this.state.isLoading ? (
                  <div className="loading-view">
                     <div className="loading">
@@ -87,13 +70,14 @@ export default class Traffle extends React.Component {
 
                    <div className="company">
                         <p>Title: {item.title}</p>
-                        <p>Company: {item.about_organizer}</p>     
+                        <p>Organizer: {item.about_organizer}</p>     
                    </div>
 
                   <div>
                   <p>Draw Duration:</p>
                    <Alert>
-                        <Countdown duration={this.duration()}/>
+                        <p>Due Date: {item.duration}</p>
+                        <Countdown duration={this.duration(item.duration)}/>
                    </Alert>
                   </div>
                    
@@ -101,9 +85,9 @@ export default class Traffle extends React.Component {
 
                    <div>
                    <p style={{ textAlign: "center"}}><b>Tweet:</b> </p>
-                    <Alert>  
+                   <div className="company">
                         <p>{item.tweet}</p>
-                    </Alert>
+                    </div>
                     </div>
 
                     <Alert>
@@ -112,7 +96,10 @@ export default class Traffle extends React.Component {
                         <p>{item.terms_conditions}</p>
                     </Alert>
 
-                  <Retweet/>
+                  <Retweet
+                   id = {item.id}
+                   tweet_id = {item.tweet_id}
+                  />
               
                </div>
 
@@ -120,10 +107,6 @@ export default class Traffle extends React.Component {
                     </section>
                 
                 )}
-            
-               
-
-             
            </section>
          )
        }

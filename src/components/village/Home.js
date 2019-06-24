@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {  Col, Row, Glyphicon } from 'react-bootstrap'
+import {  Col, Row, Glyphicon, Navbar } from 'react-bootstrap'
 import Traffle from './neighborhoods/Traffle'
 import Draw from './neighborhoods/Draw'
 import Winner from './neighborhoods/Winner'
@@ -53,14 +53,14 @@ export default class Home extends React.Component {
                    <Sticky>{({ style }) =>
                    <header style={style}>
 
-                      <div className="navigation">
+                    <div className="navigation">
                     <Row>
                     <Col lg={6} md={6} sm={8} xs={8}>
                       <p className="app-name"><img src= { require ('./neighborhoods/blocks/houses/images/icon.png') } height="30" width="30" alt="logo"/>Traffle Draw</p>
                     </Col>
                     <Col lg={6} md={6} sm={4} xs={4} className="list">
                       <Link to='/menu_list'>
-                          <p><img src= {'https://pbs.twimg.com/profile_images/865699756793896960/U_RlDKQ9_normal.jpg'} height="30" width="30" alt="logo"/><Glyphicon glyph="option-vertical" style={{ fontSize: 20, color: 'black' }}/></p>
+                          <p><img src= {'https://pbs.twimg.com/profile_images/865699756793896960/U_RlDKQ9_normal.jpg'} height="30" width="30" alt="logo"/><Glyphicon glyph="option-vertical" style={{ fontSize: 20, color: '#1da1f2' }}/></p>
                       </Link>
                     </Col>
                     </Row>
@@ -104,6 +104,7 @@ export default class Home extends React.Component {
                    }</Sticky>
 
                   <Row>
+           
                     {this.state.traffle_code && (
                       <Traffle/>
                     )}
@@ -115,7 +116,9 @@ export default class Home extends React.Component {
                     {this.state.winner_code && (
                       <Winner/>
                     )}
+
                   </Row>
+                  
                   </StickyContainer>
                
                 )

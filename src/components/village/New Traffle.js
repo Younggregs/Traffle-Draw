@@ -8,13 +8,60 @@ export default class NewTraffle extends React.Component {
 
     state = {
         description_err: false,
-        next_form : false
+        next_form : false,
+        title_err: false,
+        winner_err: false,
+        prize_err: false,
+        title: null,
+        winners: null,
+        prizes: null,
+        terms_conditions: null,
+        about_organizer: null,
     }
 
-
-
     next_form(){
-        this.setState({ next_form: true })
+        
+        this.setState({ 
+          title_err: false,
+          winner_err: false,
+          prize_err: false
+        })
+        
+        var title = document.getElementById("title").value
+        var winners = document.getElementById("winners").value
+        var prizes = document.getElementById("prizes").value
+        var terms_conditions = document.getElementById("terms_conditions").value
+        var about_organizer = document.getElementById("about_organizer").value
+        
+
+          if(title){
+    
+            if(winners){
+    
+              if(prizes){
+                this.setState({
+                  title: title,
+                  winners: winners,
+                  prizes: prizes,
+                  terms_conditions: terms_conditions,
+                  about_organizer: about_organizer,
+                  next_form: true,
+                })
+
+    
+              }else{
+                this.setState({prize_err: true})
+              }
+    
+            }else{
+              this.setState({winner_err: true})
+            }
+    
+          }else{
+            this.setState({title_err: true})
+          }
+     
+    
     }
 
 
@@ -34,14 +81,21 @@ export default class NewTraffle extends React.Component {
          return (
            <section className="traffle">
 
-             <div className="titleDesign" style={{ fontSize: 25, margin: 20, color: 'white'}}>
+            
+              <div className="titleDesign" style={{ fontSize: 25, margin: 20, color: 'white'}}>
                <p>Create New Transparent Raffle</p>
              </div>
 
              <div className="traffle-box">
 
                {this.state.next_form ? (
-                   <NewTraffle2/>
+                   <NewTraffle2
+                    title = {this.state.title}
+                    winners = {this.state.winners}
+                    prizes = {this.state.prizes}
+                    terms_conditions = {this.state.terms_conditions}
+                    about_organizer = {this.state.about_organizer}
+                    />
                ) : (
 
                 <form>
@@ -73,7 +127,7 @@ export default class NewTraffle extends React.Component {
               <Col lg={6} md={6} sm={12} xs={12}>
                   <FormGroup controlId="formControlsTextarea">
                     <ControlLabel>Prizes *
-                    {this.state.description_err ? (
+                    {this.state.prize_err ? (
                     <span className="err-msg">
                      * description required 
                     </span>
@@ -84,8 +138,8 @@ export default class NewTraffle extends React.Component {
                     <FormControl
                       componentClass="textarea"
                       placeholder="Prizes to be won *"
-                       id="description"
-                        name="description"
+                        id="prizes"
+                        name="prizes"
                         rows={3}
                         />
                   </FormGroup>
@@ -105,8 +159,8 @@ export default class NewTraffle extends React.Component {
                     <FormControl
                         componentClass="textarea"
                         placeholder="Terms and  conditions goes here "
-                        id="description" 
-                        name="description"
+                        id="terms_conditions" 
+                        name="terms_conditions"
                         rows={3}/>
                   </FormGroup>
                </Col>
@@ -128,14 +182,14 @@ export default class NewTraffle extends React.Component {
                     <FormControl 
                     componentClass="textarea" 
                     placeholder="About draw organizer(s)" 
-                    id="description" 
-                    name="description"
+                    id="about_organizer" 
+                    name="about_organizer"
                     rows={3}/>
                   </FormGroup>
                </Col>
               
                   <Col lg={6} md={6} sm={3} smOffset={4} xs={3} xsOffset={4}>
-                      <br /><Button bsStyle="success" onClick={() => this.next_form()}>Continue</Button>
+                      <br /><Button bsStyle="primary" onClick={() => this.next_form()}>Continue</Button>
                   </Col>
               
                 </Row>
@@ -143,6 +197,7 @@ export default class NewTraffle extends React.Component {
 
                )}
                </div>
+             
              
            </section>
          )

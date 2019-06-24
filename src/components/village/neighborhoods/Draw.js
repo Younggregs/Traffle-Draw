@@ -13,10 +13,7 @@ export default class Traffle extends React.Component {
       }
 
 
-      duration(){ 
-        var t = Math.floor(Math.random() * 1000000000);
-        this.setState({ startTime: t }) 
-      }
+      duration(){ return Math.floor(Math.random() * 1000000000); }
  
       async componentDidMount() {
   
@@ -58,14 +55,15 @@ export default class Traffle extends React.Component {
 
                     <div className="company">
                         <p>Title: {item.title}</p>
-                        <p>Company: {item.about_organizer}</p>
+                        <p>Organizer: {item.about_organizer}</p>
                         
                     </div>
 
                     <div>
                     <p>Draw Duration:</p>
                     <Alert>
-                        <Countdown duration={this.state.startTime}/>
+                        <p>{item.duration}</p>
+                        <Countdown duration={this.duration()}/>
                     </Alert>
                     </div>
 

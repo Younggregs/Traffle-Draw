@@ -51,7 +51,7 @@ export default class Winner extends React.Component {
 
                         <div className="company">
                             <p>Title: {item.title}</p>
-                            <p>Company: {item.about_organizer}</p>
+                            <p>Organizer: {item.about_organizer}</p>
                         
 
                         </div>

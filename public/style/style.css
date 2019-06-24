@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Chicle');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Mali');
 @import url('https://fonts.googleapis.com/css?family=Audiowide');
 @import url('https://fonts.googleapis.com/css?family=Righteous');
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Rubik');
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
 body{
   background-color:#E1E8ED;
-  font-family: "Ubuntu";
+  font-family: "Rubik";
   color: 'black';
 }
 
@@ -64,7 +64,7 @@ body{
 
 .ticket{
   padding:10px;
-  background-image: linear-gradient(to right,#0f0c29, #302b63, #24243e);
+  background: #008abe;
   border-radius: 5px;
   box-shadow: 0 0 5px #666;
   text-align: center;
@@ -77,7 +77,7 @@ body{
 
 .tweet{
   padding:10px;
-  background-image: linear-gradient(to right,#0f0c29, #302b63, #24243e);
+  background: #008abe;
   border-radius: 5px;
   text-align: center;
   color: white;
@@ -131,16 +131,33 @@ body{
 
 .active-tab{
   border-color: black;
-  color: black;
+  color: #008abe;
   border-style: solid;
   border-width: 2px;
   border-radius: 5px;
+  border-color: #008abe;
 }
 
 .traffle-box{
   align-items: center;
   justify-content: center;
   display: flex;
+  min-width: 600px;
+  flex-direction: column;
+  background-color: white;
+  border-color:#E1E8ED;
+  border-style: solid;
+  border-width: 1px;
+  padding:10px;
+}
+
+
+.tweet-box{
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 80%;
   flex-direction: column;
   background-color: white;
   border-color:#E1E8ED;
@@ -151,7 +168,6 @@ body{
 
 
 .traffle{
-
   align-items: center;
   justify-content: center;
   display: flex;
@@ -178,11 +194,11 @@ body{
 }
 
 .app-name{
-  color: black;
+  color: #008abe;
   font-size: 1.5em;
   font-weight: bold;
   padding-left: 20px;
-  font-family: "Righteous";
+  font-family: "Rubik";
 }
 
 .tabs{
@@ -192,7 +208,12 @@ body{
   align-items: center;
   justify-content: center;
   color: grey;
-  font-family: "Righteous";
+  font-family: "Rubik";
 
+}
+
+
+.err-msg{
+  color: darkred;
 }
 

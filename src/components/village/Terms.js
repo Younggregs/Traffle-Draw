@@ -12,6 +12,8 @@ export default class Terms extends React.Component {
 
 <h2>Disclaimers for Traffle Draw</h2>
 
+<p>We are not responsible for fulfilment to draw winners, that is beyond our scope.</p>
+
 <p>All the information on this website - https://traffle-draw.herokuapp.com - is published in good faith and for general information purpose only. Traffle Draw does not make any warranties about the completeness, reliability and accuracy of this information. Any action you take upon the information you find on this website (Traffle Draw), is strictly at your own risk. Traffle Draw will not be liable for any losses and/or damages in connection with the use of our website. Our Disclaimer was generated with the help of the <a href="https://www.disclaimergenerator.net/">Disclaimer Generator</a> and the <a href="https://www.termsandcondiitionssample.com">Terms and Conditions Template</a>.</p>
 
 <p>From our website, you can visit other websites by following hyperlinks to such external sites. While we strive to provide only quality links to useful and ethical websites, we have no control over the content and nature of these sites. These links to other websites do not imply a recommendation for all the content found on these sites. Site owners and content may change without notice and may occur before we have the opportunity to remove a link which may have gone 'bad'.</p>

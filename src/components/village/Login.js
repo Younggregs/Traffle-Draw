@@ -7,6 +7,7 @@ import 'firebase/auth';
 import firebaseConfig from './firebaseConfig';
 import Spinner from 'react-activity/lib/Spinner';
 import 'react-activity/lib/Spinner/Spinner.css';
+import login from './neighborhoods/blocks/houses/store/Store'
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const provider = new firebase.auth.TwitterAuthProvider();
@@ -25,38 +26,36 @@ class Login extends React.Component {
 
 
   logged_on(token, secret, user){
-    this.setState({ token, secret, user})
+
+      this.setState({ user })
+      login(token, secret, user.displayName, user.photoURL)
+
+      
+  
   }
 
 
   componentDidMount(){
-
-            this.setState({ isLoading: true })
-
-            var success = false
-            var token = null
-            var secret = null
-            var user = null
-
             const that = this
 
             try {
                  firebase.auth().getRedirectResult().then(function(result) {
                    
+                    var success = false
                     if (result.credential) {
                       // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
                       // You can use these server side with your app's credentials to access the Twitter API.
-                      token = result.credential.accessToken;
-                      secret = result.credential.secret;
-                      success = true;
-                     
+                      var token = result.credential.accessToken;
+                      var secret = result.credential.secret;
+                      
                     }
                     // The signed-in user info.
-                    user = result.user;
+                    var user = result.user;
 
+                    
                     that.logged_on(token, secret, user)
                     
-    
+
                     console.log(token)
                     console.log(secret)
                     console.log(user)
@@ -73,14 +72,6 @@ class Login extends React.Component {
               console.log("Control broke")
             }
 
-            this.setState({ isLoading: false})
-            this.forceUpdate()
-
-            if(success){
-              this.setState({logged_in: true, user: user})
-            }
-            
-
         }
 
 
@@ -90,20 +81,27 @@ class Login extends React.Component {
 
 
         twitterSignin() {
+
+           const that = this
             
            firebase.auth().signInWithPopup(provider)
             
           .then(function(result) {
+
+            var success = false
             if (result.credential) {
               // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
               // You can use these server side with your app's credentials to access the Twitter API.
               var token = result.credential.accessToken;
               var secret = result.credential.secret;
-
+              success = true;
               
             }
              
               var user = result.user;
+              if(success){
+                that.logged_on(token, secret, user)
+              }
 
                 
               console.log(token)
@@ -114,6 +112,16 @@ class Login extends React.Component {
               console.log(error.message)
            });
         }
+
+
+
+
+
+
+
+
+
+
         
         twitterSignout() {
            firebase.auth().signOut()
@@ -139,11 +147,9 @@ class Login extends React.Component {
                </div>
 
                {this.state.isLoading ? (
-                    <div className="loading-view">
                      <div className="loading">
                          <Spinner color="#0f0c29" size={22}/>
                      </div>
-                  </div>
                 ) : (
 
                   <header className="App-header">
