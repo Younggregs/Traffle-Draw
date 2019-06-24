@@ -10,7 +10,6 @@ import Disclaimer from './components/village/Disclaimer'
 import About from './components/village/About'
 import MenuList from './components/village/Menu List'
 import Terms from './components/village/Terms'
-import ProcessLogin from './components/village/Process Login'
 import Tweet from './components/village/Tweet'
 
 
@@ -28,7 +27,6 @@ class App extends React.Component {
             <Route exact path="/about" component={About}/>
             <Route exact path="/menu_list" component={MenuList}/>
             <Route exact path="terms" component={Terms}/>
-            <Route exact path="/process_login" component={ProcessLogin}/>
             <Route exact path="/tweet" component={Tweet}/>
           </div>
         </Router>
