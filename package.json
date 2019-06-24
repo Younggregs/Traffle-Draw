@@ -1,6 +1,9 @@
 {
   "name": "traffle_draw",
   "version": "0.1.0",
+  "engines": {
+    "node": "12.3.1"
+  },
   "private": true,
   "dependencies": {
     "crypto-js": "^3.1.9-1",
