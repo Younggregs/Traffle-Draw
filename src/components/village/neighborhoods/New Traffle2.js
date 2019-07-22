@@ -67,7 +67,9 @@ export default class NewTraffle2 extends React.Component {
       var tweet_url = document.getElementById("tweet_url").value
       var tweet_array = tweet_url.split("/")
 
-      var tweet_id = tweet_array[5]
+      var tweet_register = tweet_array[5]
+      var tweet_buffer = tweet_register.split("?")
+      var tweet_id = tweet_buffer[0]
 
       var formData = new FormData()
       formData.append('auth_code', auth_code)

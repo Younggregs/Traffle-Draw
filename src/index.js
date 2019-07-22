@@ -11,6 +11,8 @@ import About from './components/village/About'
 import MenuList from './components/village/Menu List'
 import Terms from './components/village/Terms'
 import Tweet from './components/village/Tweet'
+import RetweetView from './components/village/neighborhoods/Retweet View'
+
 
 
 class App extends React.Component {
@@ -26,8 +28,9 @@ class App extends React.Component {
             <Route exact path="/disclaimer" component={Disclaimer}/>
             <Route exact path="/about" component={About}/>
             <Route exact path="/menu_list" component={MenuList}/>
-            <Route exact path="terms" component={Terms}/>
+            <Route exact path="/terms" component={Terms}/>
             <Route exact path="/tweet" component={Tweet}/>
+            <Route exact path="/retweet_view/:tweet_id" component={RetweetView}/>
           </div>
         </Router>
         )

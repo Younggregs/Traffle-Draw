@@ -84,7 +84,7 @@ export default class Traffle extends React.Component {
                    
 
                    <div>
-                   <p style={{ textAlign: "center"}}><b>Tweet:</b> </p>
+                   <p style={{ textAlign: "center"}}><b>Tweet:</b></p>
                    <div className="company">
                         <p>{item.tweet}</p>
                     </div>
@@ -96,10 +96,16 @@ export default class Traffle extends React.Component {
                         <p>{item.terms_conditions}</p>
                     </Alert>
 
+                  <div className="tweet">
+                      <Link to={`/retweet_view/${item.tweet_id}`}><Button><img src= { require ('./blocks/houses/images/t-logo.png') } height="30" width="30" alt="twitter-logo" responsive/>View Retweets</Button></Link>
+                  </div>
+
                   <Retweet
                    id = {item.id}
                    tweet_id = {item.tweet_id}
                   />
+
+                  
               
                </div>
 

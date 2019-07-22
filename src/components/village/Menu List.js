@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {  Col, Row, Glyphicon, Alert } from 'react-bootstrap'
-import Traffle from './neighborhoods/Traffle'
-import Draw from './neighborhoods/Draw'
 
 
 export default class Home extends React.Component {
