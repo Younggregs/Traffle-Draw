@@ -108,7 +108,7 @@ export default class RetweetView extends React.Component {
 
           
           
-          <div className="traffle-box">
+          <div style={{ background: 'white', paddingLeft: 20}}>
           <Row>
           <Col lg={3} lgOffset={1} md={3} mdOffset={1} sm={12} xs={12}>
               <div>

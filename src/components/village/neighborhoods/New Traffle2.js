@@ -163,7 +163,7 @@ export default class NewTraffle2 extends React.Component {
            <section>
               <form>
   <Row>
-   <Col lg={6} md={6} sm={12} xs={12}>
+   <Col lg={6} md={6} sm={10} smOffset={1} xs={10} xs={1}>
     <FieldGroup
       id="duration"
       type="date"
@@ -176,16 +176,16 @@ export default class NewTraffle2 extends React.Component {
     <HelpBlock>Draw starts immediately</HelpBlock>
     </Col>
 
-    <Col lg={6} md={6} sm={12} xs={12}>
+    <Col lg={6} md={6} sm={8} smOffset={1} xs={8} xs={1}>
       <p>Draw fee $5 per day </p>
-      <Alert>
+      <div className="tweet-box">
           <p>= ${this.state.draw_amount} for {this.state.draw_days}day(s)</p>
-      </Alert>
+      </div>
     </Col>
 </Row>
 
 <Row>
-    <Col lg={12} md={12} sm={12} xs={12}>
+    <Col lg={12} md={12} sm={10} smOffset={1} xs={10} xs={1}>
       <FieldGroup
         id="tweet_url"
         type="text"
@@ -194,7 +194,7 @@ export default class NewTraffle2 extends React.Component {
         placeholder={this.state.tweet_url}
         onChange={this.verify_tweet.bind(this)}
       />
-      <HelpBlock>tweet url eg. https://twitter.com/TheWrap/status/1142515578369978372</HelpBlock>
+      <HelpBlock>eg. https://twitter.com/TheWrap/status/1142515578369978372</HelpBlock>
     </Col>
 
     {this.state.show_tweet ? (
@@ -257,7 +257,7 @@ export default class NewTraffle2 extends React.Component {
   
   </Row>
   </form>
-           </section>
+  </section>
          )
        }
   }
