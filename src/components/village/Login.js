@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, Redirect } from 'react-router-dom'
-import { Button, Row, Col } from 'react-bootstrap'
+import { Button, Row, Col, Image } from 'react-bootstrap'
 import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
