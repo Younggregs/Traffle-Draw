@@ -140,6 +140,12 @@ class Login extends React.Component {
        render() {
          return (
            <section className="login">
+             <Row>
+               <Col lg={6} md={6} smHidden xsHidden>
+                  <Image src= { require ('./neighborhoods/blocks/houses/images/bg1.jpg') } style={{ flex: 1, height: undefined, width: undefined }} resizeMode="auto" alt="twitter-logo" responsive/>
+               </Col>
+               <Col lg={6} md={6} sm={12} xs={12}>
+               <section className="login-bg">
                <div className="header">
                <img src= { require ('./neighborhoods/blocks/houses/images/icon.png') } style={{ margin: 20}} height="50" width="50" alt="twitter-logo" responsive/>
                    <p className="headerText">Welcome to <span className="titleDesign">Traffle Draw</span></p>
@@ -184,8 +190,12 @@ class Login extends React.Component {
                 </header>
                 
                 )}
-              
-         
+
+
+              </section>
+
+           </Col>
+           </Row>
            </section>
          )
        }

@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Alert, Table, Col, Row, Glyphicon} from 'react-bootstrap'
+import { Table, Col, Row, Glyphicon} from 'react-bootstrap'
 import Spinner from 'react-activity/lib/Spinner';
 import 'react-activity/lib/Spinner/Spinner.css';
-import Countdown from './blocks/Countdown'
 
 
 
@@ -13,7 +12,8 @@ export default class RetweetView extends React.Component {
           winner_list: [],
           isLoading: false,
           retweet_list: [],
-          rank: 0
+          rank: 0,
+          tweet: ''
       }
 
 
@@ -41,9 +41,22 @@ export default class RetweetView extends React.Component {
           } catch (e) {
             console.log(e);
           }
+
+      try {
+        const res = await fetch('https://iwansell.com/api/get_tweet/' + this.props.match.params.tweet_id + '/', {
+         body : formData,
+         method: 'POST',
+        })
+        const tweet = await res.json();
+          this.setState({
+            tweet
+          });
+
+      } catch (e) {
+        console.log(e);
+      }
   
           this.setState({ isLoading: false })
-  
   
     }
 
@@ -97,10 +110,15 @@ export default class RetweetView extends React.Component {
           
           <div className="traffle-box">
           <Row>
-            <Col lg={8} lgOffset={1} md={8} mdOffset={1} sm={12} xs={12}>
-              
-                
-
+          <Col lg={3} lgOffset={1} md={3} mdOffset={1} sm={12} xs={12}>
+              <div>
+                   <p style={{ textAlign: "center"}}><b>Tweet:</b> </p>
+                   <div className="company">
+                        <p>{this.state.tweet}</p>
+                    </div>
+              </div>
+            </Col>
+            <Col lg={8} md={8} sm={12} xs={12}>
                 {this.state.isLoading ? (
                  <div className="loading-view">
                     <div className="loading">
@@ -139,40 +157,7 @@ export default class RetweetView extends React.Component {
                 </div>
                 )}
             </Col>
-            <Col lg={3} md={3} sm={12} xs={12}>
-              <div className="side_tweet">
-
-                   <div className="company">
-                        <p>Title:</p>
-                        <p>Organizer:</p>     
-                   </div>
-
-                  <div>
-                  <p>Draw Duration:</p>
-                   <Alert>
-                        <p>Due Date:</p>
-                        <Countdown duration={this.duration(9000000)}/>
-                   </Alert>
-                  </div>
-                   
-
-                   <div>
-                   <p style={{ textAlign: "center"}}><b>Tweet:</b> </p>
-                   <div className="company">
-                        <p></p>
-                    </div>
-                    </div>
-
-                    <Alert>
-                        <p>Number of winners:  </p>
-                        <p>Terms and Conditions:</p>
-                        <p></p>
-                    </Alert>
-
-                 
-               
-                    </div>
-            </Col>
+           
           </Row>
           </div>
 
