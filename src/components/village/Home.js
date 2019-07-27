@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {  Col, Row, Glyphicon, Navbar } from 'react-bootstrap'
+import {  Col, Row, Glyphicon, Image } from 'react-bootstrap'
 import Traffle from './neighborhoods/Traffle'
 import Draw from './neighborhoods/Draw'
 import Winner from './neighborhoods/Winner'
 import { StickyContainer, Sticky } from 'react-sticky';
+import { tsImportEqualsDeclaration } from '@babel/types';
 
+const dp = localStorage.getItem('dp')
 
 export default class Home extends React.Component {
 
@@ -13,7 +15,7 @@ export default class Home extends React.Component {
     switch_code: 1,
     traffle_code: true,
     draw_code: false, 
-    winner_code: false
+    winner_code: false,
   }
 
 
@@ -48,7 +50,6 @@ export default class Home extends React.Component {
 
       render() {
             return (
-                 
                 <StickyContainer>
                    <Sticky>{({ style }) =>
                    <header style={style}>
@@ -60,7 +61,9 @@ export default class Home extends React.Component {
                     </Col>
                     <Col lg={6} md={6} sm={4} xs={4} className="list">
                       <Link to='/menu_list'>
-                          <p><img src= {'https://pbs.twimg.com/profile_images/865699756793896960/U_RlDKQ9_normal.jpg'} height="30" width="30" alt="logo"/><Glyphicon glyph="option-vertical" style={{ fontSize: 20, color: '#1da1f2' }}/></p>
+                        
+                            <p><img src= {dp} height="30" width="30" alt="logo"/><Glyphicon glyph="option-vertical" style={{ fontSize: 20, color: '#1da1f2' }}/></p>
+                       
                       </Link>
                     </Col>
                     </Row>
@@ -103,8 +106,14 @@ export default class Home extends React.Component {
                      
                    }</Sticky>
 
+                 
+
                   <Row>
-           
+                    <Col lg={3} lgOffset={1} md={3} mdOffset={1} smHidden xsHidden>
+                        <Image src= { require ('./neighborhoods/blocks/houses/images/bg1.jpg') } style={{ flex: 1, height: undefined, width: undefined }} resizeMode="auto" alt="twitter-logo" responsive/>
+                        <Image src= { require ('./neighborhoods/blocks/houses/images/bg1.jpg') } style={{ flex: 1, height: undefined, width: undefined }} resizeMode="auto" alt="twitter-logo" responsive/>
+                    </Col>
+                    <Col lg={8} md={8} sm={12} xs={12}>
                     {this.state.traffle_code && (
                       <Traffle/>
                     )}
@@ -116,10 +125,9 @@ export default class Home extends React.Component {
                     {this.state.winner_code && (
                       <Winner/>
                     )}
-
-                  </Row>
-                  
-                  </StickyContainer>
+                  </Col>
+                </Row>
+                </StickyContainer>
                
                 )
               }

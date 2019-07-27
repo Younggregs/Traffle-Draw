@@ -35,7 +35,7 @@ export default class Winner extends React.Component {
 
        render() {
          return (
-           <section className="traffle">
+           <section>
                  {this.state.isLoading ? (
                     <div className="loading-view">
                      <div className="loading">

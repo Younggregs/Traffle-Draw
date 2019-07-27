@@ -21,6 +21,7 @@ export async function login(token, secret, name, dp) {
       });
       const auth_code = await res.json();
       localStorage.setItem('auth_code', auth_code)
+      localStorage.setItem('dp', dp)
     } catch (e) {
       console.log(e);
     }

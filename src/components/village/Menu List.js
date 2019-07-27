@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {  Col, Row, Glyphicon, Alert } from 'react-bootstrap'
+import {  Col, Row, Glyphicon, Alert, Image } from 'react-bootstrap'
+
 
 
 export default class Home extends React.Component {
@@ -41,8 +42,13 @@ export default class Home extends React.Component {
                     </Row>
                   </div>
 
-                  <Row className="traffle">
-                    <Col lg = {6} lgOffset={2} md = {6} mdOffset={1} sm={12} xs={12}>
+                  <Row>
+                  <Col lg={3} lgOffset={1} md={3} mdOffset={1} smHidden xsHidden>
+                        <Image src= { require ('./neighborhoods/blocks/houses/images/bg1.jpg') } style={{ flex: 1, height: undefined, width: undefined }} resizeMode="auto" alt="twitter-logo" responsive/>
+                        <Image src= { require ('./neighborhoods/blocks/houses/images/bg1.jpg') } style={{ flex: 1, height: undefined, width: undefined }} resizeMode="auto" alt="twitter-logo" responsive/>
+                    </Col>
+                    
+                    <Col lg={6} md={6} sm={12} xs={12}>
                       <div className="traffle-box">
                           <Link to='/new_traffle'>
                               <Alert>

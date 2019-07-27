@@ -166,7 +166,6 @@ body{
   align-items: center;
   justify-content: center;
   display: flex;
-  min-width: 600px;
   flex-direction: column;
   background-color: white;
   border-color:#E1E8ED;

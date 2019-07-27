@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Row, Col, FormControl, FormGroup, ControlLabel, HelpBlock  } from 'react-bootstrap'
+import { Button, Row, Col, FormControl, FormGroup, ControlLabel, HelpBlock, Glyphicon, Image  } from 'react-bootstrap'
 import NewTraffle2 from './neighborhoods/New Traffle2'
 
 export default class NewTraffle extends React.Component {
@@ -79,10 +79,41 @@ export default class NewTraffle extends React.Component {
 
 
          return (
-           <section className="traffle">
-
-            
-              <div className="titleDesign" style={{ fontSize: 25, margin: 20, color: 'white'}}>
+           <section>
+                <div className="navigation">
+                    {this.state.is_list && (
+                      <div className="list">
+                      </div>
+                    )}
+                    <Row>
+                    <Col lg={6} md={6} sm={6} xs={6}>
+                        <Link to='/home'>
+                            <p className="app-name">Traffle Draw</p>
+                        </Link>
+                     
+                    </Col>
+                    <Col lg={6} md={6} sm={6} xs={6} className="list">
+                    <Link to='/home'>
+                      <Glyphicon glyph="remove" style={{ fontSize: 20, color: '#1da1f2' }}/>
+                    </Link>
+                    </Col>
+                    </Row>
+                    <Row className="tabs">
+                      
+                      <Col lg={12} md={12} sm={12} xs={12}>
+                        <p onClick={() => this.switch_method(1)}>
+                          Create New Traffle
+                        </p>
+                      </Col>
+                    </Row>
+                  </div>
+            <Row>
+            <Col lg={3} lgOffset={1} md={3} mdOffset={1} smHidden xsHidden>
+                        <Image src= { require ('./neighborhoods/blocks/houses/images/bg1.jpg') } style={{ flex: 1, height: undefined, width: undefined }} resizeMode="auto" alt="twitter-logo" responsive/>
+                        <Image src= { require ('./neighborhoods/blocks/houses/images/bg1.jpg') } style={{ flex: 1, height: undefined, width: undefined }} resizeMode="auto" alt="twitter-logo" responsive/>
+                    </Col>
+            <Col lg={6} md={6} sm={12} xs={12}>
+            <div className="titleDesign" style={{ fontSize: 25, margin: 20, color: 'white'}}>
                <p>Create New Transparent Raffle</p>
              </div>
 
@@ -197,6 +228,9 @@ export default class NewTraffle extends React.Component {
 
                )}
                </div>
+            </Col>
+            </Row>
+              
              
              
            </section>

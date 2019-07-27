@@ -53,7 +53,7 @@ export default class Traffle extends React.Component {
 
        render() {
          return (
-           <section className="traffle">
+           <section>
               
                {this.state.isLoading ? (
                  <div className="loading-view">
